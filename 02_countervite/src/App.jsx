@@ -6,9 +6,11 @@ import './App.css'
 function App() {
   let [cv,cvupdate]=useState(5);
   const addvalue=()=>{
+    if(cv<20)
     cvupdate(cv+1);
   }
   const subtractvalue=()=>{
+    if(cv>0)
     cvupdate(cv-1);
   }
   return (
