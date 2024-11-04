@@ -19,6 +19,7 @@ function App() {
   const passref=useRef("");
   const copypass=useCallback(()=>{
   passref.current?.select();  
+  passref.current?.setSelectionRange(0,3);  
   window.navigator.clipboard.writeText(password);
   },[password])
   useEffect(()=>{
