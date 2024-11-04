@@ -8,6 +8,14 @@ function App() {
   const addvalue=()=>{
     if(cv<20)
     cvupdate(cv+1);
+  // cvupdate(cv+1);  this whole block will be executed only once as they perform same operation,so the value will only be incremented by 1.
+  // cvupdate(cv+1);  fibre is responsible for execution
+  // cvupdate(cv+1);
+  // cvupdate(cv+1);
+  // cvupdate(cv=>cv+1); this block will update the previous value of cv hence each time the value will be incremented.
+  // cvupdate(cv=>cv+1);
+  // cvupdate(cv=>cv+1);
+  // cvupdate(cv=>cv+1);
   }
   const subtractvalue=()=>{
     if(cv>0)
