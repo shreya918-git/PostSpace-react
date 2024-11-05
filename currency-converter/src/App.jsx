@@ -15,6 +15,8 @@ function App() {
     const swap = () => {
         setto(from);
         setfrom(to);
+        changeamount(result);
+        setresult(amount)
     };
 
     const final = () => setresult(amount * currencyinfo[to]);
