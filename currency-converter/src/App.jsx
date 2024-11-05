@@ -21,12 +21,6 @@ function App() {
 
     return (
         <>
-            <div
-                className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
-                style={{
-                    backgroundImage: `url('/path/to/your-image.png')`, // Replace with the actual path in the `public` folder
-                }}
-            >
                 <div className="w-full">
                     <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                         <form
@@ -70,7 +64,6 @@ function App() {
                         </form>
                     </div>
                 </div>
-            </div>
         </>
     );
 }
