@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="d-flex flex-column align-items-center vh-100 vw-100">
     <h1 className="bg-green-200 text-center rounded-xl">Hi Tailwind</h1>
-    <Embed channel="shreya" someobj={obj}/>
+    <Embed channel="shreya"/>
     </div>
   )
 }
