@@ -2,17 +2,18 @@ import React from 'react'
 import {useState} from 'react'
 import Usetodo  from '../contexts/Todocontexts';
 function TodoItem({todo}) {
-    const[isTodoEditable,setIsTodoEditable]=useState(true);
+    const[isTodoEditable,setIsTodoEditable]=useState(false);
     const[todoMsg,setTodoMsg]=useState(todo.todotext);
     const{edittodo,deletetodo,togglecomplete}=Usetodo();
-    const toggleCompleted=(e)=>{
-        e.preventDefault();
-        togglecomplete(todo.id)  
-    }
-    const editTodo=(e)=>{
-        e.preventDefault();
-        edittodo(todo.id,{...todo,todotext:todoMsg,...todo})
-    }
+    const toggleCompleted = (e) => {
+        e.preventDefault() // Prevent default form submission if necessary
+        togglecomplete(todo.id);
+      };
+    
+      const editTodo = (e) => {
+        e.preventDefault() // Prevent default form submission if necessary
+        edittodo(todo.id, { ...todo, todotext: todoMsg });
+      };
     return (
         <>
         <div

@@ -21,7 +21,7 @@ function App() {
   }
   const togglecomplete=(id)=>{
     settodo((prev)=>{
-      prev.map((previtem)=> previtem.id==id?{ ...previtem, completed: !previtem.completed }:previtem)
+      prev.map((previtem)=> previtem.id==id?{ ...previtem, completed: !(previtem.completed) }:previtem)
     })
   }
   // useEffect(()=>{
