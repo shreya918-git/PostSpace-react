@@ -6,13 +6,14 @@ function TodoItem({todo}) {
     const[todoMsg,setTodoMsg]=useState(todo.todotext);
     const{edittodo,deletetodo,togglecomplete}=Usetodo();
     const toggleCompleted = (e) => {
-        e.preventDefault() // Prevent default form submission if necessary
+    //    if(e) e.preventDefault();// Prevent default form submission if necessary
         togglecomplete(todo.id);
       };
     
       const editTodo = (e) => {
-        e.preventDefault() // Prevent default form submission if necessary
+    //    if(e) e.preventDefault(); // Prevent default form submission if necessary
         edittodo(todo.id, { ...todo, todotext: todoMsg });
+        setIsTodoEditable(false);
       };
     return (
         <>
@@ -41,20 +42,13 @@ function TodoItem({todo}) {
             type="button"
                 className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
                 onClick={() => {
-    if (todo.completed) return;
-
-    setIsTodoEditable((prev) => {
-        const newEditableState = !prev;
-        
-        // If it was editable before, save the changes
-        if (prev) {
-            editTodo();
-        }
-        
-        return newEditableState;
-    });
-
- 
+                    if (todo.completed) return;
+            
+                    if (isTodoEditable) {
+                        editTodo(); // Pass event here only when needed
+                    } else {
+                        setIsTodoEditable(true);
+                    }
                 }}
                 disabled={todo.completed}
             >

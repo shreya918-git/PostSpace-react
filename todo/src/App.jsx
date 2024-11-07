@@ -10,19 +10,19 @@ function App() {
     settodo((prev)=>[{id:Math.random(),...todos},...prev])
   }
   const edittodo=(id,todos)=>{
-    settodo((prev)=>{
-     prev.map((previtem)=>
-      previtem.id===id?todos:previtem   //this would replace the whole object
+    settodo(prev=>(
+     prev.map(previtem=>
+      previtem.id===id? todos:previtem   //this would replace the whole object
      )
-    })
+    ))
   }
   const deletetodo=(id)=>{
-  settodo((prev)=>prev.filter((todo)=>todo.id!==id))
+  settodo(prev=>prev.filter(todo=>todo.id!==id))
   }
   const togglecomplete=(id)=>{
-    settodo((prev)=>{
-      prev.map((previtem)=> previtem.id==id?{ ...previtem, completed: !(previtem.completed) }:previtem)
-    })
+    settodo(prev=>
+      prev.map(previtem=> previtem.id==id?{ ...previtem, completed: !(previtem.completed) }:previtem)
+    )
   }
   // useEffect(()=>{
   //  const Todo= JSON.parse(localStorage.getItem("todo")); 
@@ -76,7 +76,7 @@ useEffect(() => {
                     </div>
                     <div className="flex flex-wrap gap-y-3">
                         {/*Loop and Add TodoItem here */}
-                        {Todos.map((todo)=>(
+                        {Todos.map(todo=>(
                           <div key={todo.id} className='w-full'>
                           <TodoItem todo={todo}/>
                           </div>))}
