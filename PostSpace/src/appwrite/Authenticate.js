@@ -4,8 +4,8 @@ class Authenticate{
     client=new Client();
     account;
     constructor(client){
-        this.client.setEndpoint().setProject();
-        this.account=new Account();
+        this.client.setEndpoint(confi.appwriteurl).setProject(confi.appwriteprojectid);
+        this.account=new Account(client);
     }
     async createaccount({email,password,name}){
        try{ const accountcreate=await this.account.create(ID.unique(),

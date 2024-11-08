@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";    //redux store helps us to know to the current state of user whether loggedin or loggedout
 const intialstate={
     status:false,
-    userdata:""
+    userdata:"hi"
 }
 const Storeslicer=createSlice({
     name:"auth",
-    intialstate,
+    intialstate:{},
     reducers:
     {
         login:(state,action)=>{
@@ -18,5 +18,6 @@ const Storeslicer=createSlice({
         }
     }
 })
-export {login,logout} from Storeslicer.actions
-export const Reducers=Storeslicer.reducer
+export const {login,logout} = Storeslicer.actions
+const Reducers=Storeslicer.reducer
+export default Reducers
